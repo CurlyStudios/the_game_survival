@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public ObjectPool bulletPool;
     public Transform muzzle;
+    public PlayerController player;
 
     public int curAmmo;
     public int maxAmmol;
@@ -19,30 +20,31 @@ public class Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        player = GetComponent<PlayerController>();
         //is the weapon attached to the player?
-        if(GetComponent<Player>())
+        if(player)
             isPlayer = true;
     }
 
-    void CanShoot()
+    //can we shoot? - do we have ammo?
+    public bool CanShoot ()
     {
-        //can we shoot? - do we have ammo?
-        public bool CanShoot ()
+        if(Time.time - lastShootTime >= fireRate)
         {
-            if(Time.time - lastShootTime >= fireRate)
-            {
-                if(curAmmo > 0 || infiniteAmmo == true)
-                    return true;
-            }
-            return false;
+            if(curAmmo > 0 || infiniteAmmo == true)
+                return true;
         }
+        return false;
     }
     public void Shoot()
     {
         lastShootTime = Time.time;
         curAmmo--;
 
-         GameObject bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
+         GameObject bullet = bulletPool.GetObject();
+
+         bullet.transform.position = muzzle.position;
+         bullet.transform.rotation = muzzle.rotation;
 
         //Set Velocity
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;

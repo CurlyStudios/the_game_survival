@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 //Movement
-    public float moveSpeed;
-    public float jumpForce;
+    public float moveSpeed = 5.0f;
+    public float jumpForce = 5.0f;
 //Camera
-    public float lookSensitivity;
-    public float maxLookX;
-    public float minLookX;
+    public float lookSensitivity = 3.0f;
+    public float maxLookX = 45.0f;
+    public float minLookX = -60.0f;
     private float rotX;
 
     private Camera cam;
@@ -32,19 +32,20 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        
+        if(Input.GetButtonDown("Jump"))
+        {
+        Jump();
+        }
+        Move();
+        CamLook();
         if(Input.GetButton("Fire1"))
         {
             if(weapon.CanShoot())
                 weapon.Shoot();
         }
-        if(Input.GetButtonDown("Jump"))
-        {
-        TryJump();
-        }
-        Move();
-        CamLook();
     }
-        void TryJump()
+        void Jump()
         {
             Ray ray = new Ray(transform.position, Vector3.down);
 
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
             dir.y = rig.velocity.y;
 
             rig.velocity = dir;
-            //rig.velocity = new Vector3(x, rig.velocity.y, z)
+            //rig.velocity = new Vector3(x, rig.velocity.y, z);
         }
     
 }
