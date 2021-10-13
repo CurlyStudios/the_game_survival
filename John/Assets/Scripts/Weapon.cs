@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     public PlayerController player;
 
     public int curAmmo;
-    public int maxAmmol;
+    public int maxAmmo;
     public bool infiniteAmmo;
 
     public float bulletSpeed;
