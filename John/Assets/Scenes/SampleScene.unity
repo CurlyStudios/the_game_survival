@@ -180,10 +180,10 @@ MonoBehaviour:
   muzzle: {fileID: 906563812}
   player: {fileID: 0}
   curAmmo: 0
-  maxAmmol: 0
+  maxAmmo: 0
   infiniteAmmo: 1
   bulletSpeed: 10
-  fireRate: 0.5
+  fireRate: 3
 --- !u!136 &495055555
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -274,6 +274,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39bed033b0ab14457aecf32168558b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curHp: 10
+  maxHp: 10
+  scoreToGive: 100
+  moveSpeed: 10
+  attackRange: 50
+  yPathOffset: 0.09
 --- !u!1 &547493877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,7 +1189,7 @@ MonoBehaviour:
   jumpForce: 5
   lookSensitivity: 3
   maxLookX: 45
-  minLookX: -45
+  minLookX: -60
 --- !u!114 &1338132793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,10 +1206,10 @@ MonoBehaviour:
   muzzle: {fileID: 1214136779}
   player: {fileID: 1338132792}
   curAmmo: 10
-  maxAmmol: 100
-  infiniteAmmo: 1
-  bulletSpeed: 100
-  fireRate: -10
+  maxAmmo: 20
+  infiniteAmmo: 0
+  bulletSpeed: 20
+  fireRate: 1
 --- !u!114 &1338132794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1320,6 +1326,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2662014621117351003, guid: 7b29eb00824d5441996aca1c86c1cf7b, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 3967665509375764026, guid: 7b29eb00824d5441996aca1c86c1cf7b, type: 3}
       propertyPath: m_RootOrder
       value: 1

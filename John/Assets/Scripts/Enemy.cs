@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class Enemy : MonoBehaviour
 {
 //stats
@@ -17,12 +17,13 @@ private List<Vector3> path;
 
 private Weapon weapon;
 private GameObject target;
-public PlayerController player;
+private PlayerController player;
+
     // Start is called before the first frame update
     void Start()
     {
-        weapon = GetComponents<Weapon>();
-        target = FindObjectOfType<player>().gameObject;
+        weapon = GetComponent<Weapon>();
+        target = FindObjectOfType<PlayerController>().gameObject;
         InvokeRepeating("UpdatePath", 0.0f, 0.5f);
     }
 
