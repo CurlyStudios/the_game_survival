@@ -30,6 +30,7 @@ private PlayerController player;
     // Update is called once per frame
     void Update()
     {
+        
         float dist = Vector3.Distance(transform.position, target.transform.position);
 
         if(dist <= attackRange)
@@ -41,13 +42,12 @@ private PlayerController player;
         {
             ChaseTarget();
         }
-        
+    
+        //rotate enemy
+        Vector3 dir = (target.transform.position - transform.position).normalized;
+        float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
 
-    //rotate enemy
-    Vector3 dir = (target.transform.position - transform.position).normalized;
-    float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-
-    transform.eulerAngles = Vector3.up * angle;
+        transform.eulerAngles = Vector3.up * angle;
     }
 
     public void TakeDamage (int damage)
@@ -78,4 +78,8 @@ private PlayerController player;
 
         path = navMeshPath.corners.ToList();
     }
+
+   
+    
+    
 }

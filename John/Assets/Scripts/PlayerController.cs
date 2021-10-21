@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public float minLookX = -60.0f;
     private float rotX;
 
+    public int curHp;
+    public int maxHp;
+
     private Camera cam;
     private Rigidbody rig;
 
@@ -74,6 +77,17 @@ public class PlayerController : MonoBehaviour
 
             rig.velocity = dir;
             //rig.velocity = new Vector3(x, rig.velocity.y, z);
+        }
+
+        public void TakeDamage(int damage)
+        {
+            curHp -= damage;
+            if(curHp <= 0)
+            Die();
+        }
+        void Die() 
+        {
+        
         }
     
 }
