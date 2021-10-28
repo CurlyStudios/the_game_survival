@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8b04d69cef946539cae1f7a19f9f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objPrefab: {fileID: 0}
+  objPrefab: {fileID: 7981033266655569313, guid: 7b29eb00824d5441996aca1c86c1cf7b, type: 3}
   createOnStart: 0
 --- !u!114 &495055554
 MonoBehaviour:
@@ -538,8 +538,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20fb6d78798434fa08353aedae41f2ec, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 17032.713
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20fb6d78798434fa08353aedae41f2ec, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 17032.713
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20fb6d78798434fa08353aedae41f2ec, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 17032.713
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 20fb6d78798434fa08353aedae41f2ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.3624115
+      value: -3.3624
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20fb6d78798434fa08353aedae41f2ec, type: 3}
       propertyPath: m_LocalPosition.y
@@ -547,7 +559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20fb6d78798434fa08353aedae41f2ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.45354843
+      value: -0.45358
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20fb6d78798434fa08353aedae41f2ec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -577,6 +589,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 20fb6d78798434fa08353aedae41f2ec, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba9c5f1c363304e70a603119c1e18aff, type: 2}
     - target: {fileID: 919132149155446097, guid: 20fb6d78798434fa08353aedae41f2ec, type: 3}
       propertyPath: m_Name
       value: BackGroundStars
@@ -607,7 +623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906563811}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.380553, y: 0.28042936, z: 6.5324364}
+  m_LocalPosition: {x: 0.9, y: 0.28042936, z: 1.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495055558}
@@ -867,10 +883,10 @@ MonoBehaviour:
   muzzle: {fileID: 1214136779}
   player: {fileID: 0}
   curAmmo: 0
-  maxAmmo: 0
+  maxAmmo: 10
   infiniteAmmo: 1
   bulletSpeed: 10
-  fireRate: 5
+  fireRate: 0.1
 --- !u!114 &1063419753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -982,21 +998,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063419750}
   m_Mesh: {fileID: 70948873267775455, guid: cd27b8aba4051402f8b333da38c28708, type: 3}
---- !u!111 &1063419759
-Animation:
+--- !u!95 &1063419759
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063419750}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: -203655887218126122, guid: cd27b8aba4051402f8b333da38c28708, type: 3}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1083248598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,7 +1334,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141440867}
-  m_Material: {fileID: 13400000, guid: be07d6e07d1bf4819ab0a661c0e762c7, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
