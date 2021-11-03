@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
 
+    private Weapon weapon;
 
     public enum PickupType
     {
@@ -13,6 +14,8 @@ public class Pickup : MonoBehaviour
     }
     public PickupType type;
     public int value;
+    public int curHp;
+    public int maxHp;
 
     //BOBBING
     public float rotateSpeed;
@@ -46,7 +49,7 @@ public class Pickup : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Destroy(gameObject);
-            Player player = other.GetComponent<player>();
+            Player player = other.GetComponent<PlayerController>();
             
             switch(type) 
             {
@@ -64,7 +67,7 @@ public class Pickup : MonoBehaviour
 
     public void GiveHealth ()
     {
-        curHp = Mathf.Clamp(curHP + amountToGive, 0, maxHp);
+        curHp = Mathf.Clamp(curHp + 10, 0, maxHp);
     }
 
     public void GiveAmmo (int amountToGive)
