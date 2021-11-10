@@ -1785,6 +1785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JoinedPlayerModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 46b2d9ef6fe444d3c90e70618a5159cf, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 46b2d9ef6fe444d3c90e70618a5159cf, type: 3}
       propertyPath: m_LocalPosition.y
       value: -6.8
