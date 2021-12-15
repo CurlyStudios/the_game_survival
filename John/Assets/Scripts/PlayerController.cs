@@ -67,6 +67,18 @@ public class PlayerController : MonoBehaviour
             transform.eulerAngles += Vector3.up * y;
         }
 
+        public void GiveHealth (int amountToGive)
+        {   
+            curHp = Mathf.Clamp(curHp + amountToGive, 0, maxHp);
+            GameUI.instance.UpdateHealthBar(curHp, maxHp);
+        }
+
+        public void GiveAmmo (int amountToGive)
+        {
+            weapon.curAmmo = Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
+            GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
+        }
+
         void Move() 
         {
             float x = Input.GetAxis("Horizontal") * moveSpeed;

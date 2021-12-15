@@ -24,6 +24,7 @@ public class Pickup : MonoBehaviour
 
     private Vector3 startPos;
     private bool bobbingUp;
+    private PlayerController player;
 
 
 // Start is called before the first frame update
@@ -54,7 +55,7 @@ public class Pickup : MonoBehaviour
             switch(type) 
             {
                 case PickupType.Health:
-                    Player.GiveHealth(value);
+                    player.GiveHealth(value);
                     break;
                 case PickupType.Ammo:
                     player.GiveAmmo(value);
