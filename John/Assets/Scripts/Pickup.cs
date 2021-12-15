@@ -49,12 +49,12 @@ public class Pickup : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Destroy(gameObject);
-            Player player = other.GetComponent<PlayerController>();
+            PlayerController player = other.GetComponent<PlayerController>();
             
             switch(type) 
             {
                 case PickupType.Health:
-                    player.GiveHealth(value);
+                    Player.GiveHealth(value);
                     break;
                 case PickupType.Ammo:
                     player.GiveAmmo(value);
