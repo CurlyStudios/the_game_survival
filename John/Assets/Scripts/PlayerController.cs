@@ -70,13 +70,13 @@ public class PlayerController : MonoBehaviour
         public void GiveHealth (int amountToGive)
         {   
             curHp = Mathf.Clamp(curHp + amountToGive, 0, maxHp);
-            GameUI.instance.UpdateHealthBar(curHp, maxHp);
+            //GameUI.instance.UpdateHealthBar(curHp, maxHp);
         }
 
         public void GiveAmmo (int amountToGive)
         {
             weapon.curAmmo = Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
-            GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
+            //GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
         }
 
         void Move() 
