@@ -771,8 +771,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 948b8fc15d55d40218bada481306c7ff, type: 3}
   m_PrefabInstance: {fileID: 1102115721}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &950559530
-MeshCollider:
+--- !u!65 &950559530
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -781,10 +781,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.10600286, y: 0.027723335, z: 0.5034937}
+  m_Center: {x: 0.19813307, y: -0.048932202, z: 0.24825332}
 --- !u!54 &950559531
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1055,7 +1054,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 5
   lookSensitivity: 3
-  maxLookX: 45
+  maxLookX: 90
   minLookX: -60
   curHp: 0
   maxHp: 0
@@ -2071,19 +2070,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &1808082025
-BoxCollider:
+--- !u!154 &1808082025
+TerrainCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808082021}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 305.62946, y: 6.5274134, z: 548.4354}
-  m_Center: {x: 152.31473, y: -3.7637057, z: 274.3355}
+  m_TerrainData: {fileID: 0}
+  m_EnableTreeColliders: 1
 --- !u!1 &1826674242
 GameObject:
   m_ObjectHideFlags: 0
